@@ -1,0 +1,9 @@
+ 1.APP => menuを呼び出して表示
+ 2.Menu
+    "A: Make booking\n"+
+    "B: Check booking\n"+
+    "C: Cansell\n"+
+ 3.Booking
+    * name
+    * number of people
+    * time
