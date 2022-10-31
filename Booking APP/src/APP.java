@@ -11,9 +11,9 @@ public class APP {
             Menu login = new Menu();
             ID loginId = new ID("haru", "1234");
 
-            System.out.println("=================================");
+            System.out.println("========================================================");
             System.out.println("Welcome to ABC reservation system");
-            System.out.println("=================================");
+            System.out.println("========================================================");
             
             while(true){
                 clrscr();
@@ -26,11 +26,13 @@ public class APP {
                     System.out.println("Welcome, " + id);
                     break;
                 }
-
-                System.out.println("Invalid credentials\nPress [enter] key to try again or press [Q] to quit");
+                System.out.println("*****************! Invalid credentials !*****************\n" +
+                                 "Press [enter] key to try again or press [Q] to quit");
 
                 if(input.nextLine().toLowerCase().equals("q")){
-                    System.out.println("Thank you!");
+                    System.out.println("========================================================");
+                    System.out.println("Thank you! See you again...");
+                    System.out.println("========================================================");
                     System.exit(0);
                 }
             }

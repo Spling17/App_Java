@@ -6,44 +6,64 @@ public class Menu {
     char option;
     try (Scanner input = new Scanner(System.in)) {
 
+        Booking bk = new Booking();
+        
         do{
-            System.out.println(
-                "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=\n"+
-                "Select an option from the menu\n"+
+            System.out.println("\n" + 
+                "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*\n"+
+                "Select an Option from the Menu\n"+ "\n" +
                 "A: Make a Reservation\n"+
                 "B: Check your Reservation\n"+
                 "C: Cansell your Reservation\n"+
-                "E: Quit\n"+
-                "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*="
+                "D: Quit\n"+
+                "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*"
             );
             option = input.next().charAt(0); // [a]sdasdads sgasgagsasf
 
             Booking booking = new Booking();
+            
+            APP.clrscr();
+            switch (Character.toLowerCase(option)) {
 
-                // APP.clrscr();
+                case 'a':
+                booking.makeReservation();
+                break;
+                
+                case 'b':
+                // if(bk.getAllBookingData().size() > 0) {
+                    System.out.println("Check");
+                    booking.checkReservation();
+                // } else {
+                    // System.out.println("There are currently NO Reservations");
+                // }
+                break;
+                
+                case 'c':
 
-                switch (Character.toLowerCase(option)) {
-                    case 'a':
-                        booking.makeReservation();
-                        break;
-                    case 'b':
-                        booking.checkReservation();
-
-                        break;
-                    case 'c':
-                        // キャンセル用のメソッド
-                        booking.cancelReservation();
-                        break;
-                    default:
-                        System.out.println("Invalid option. Please try again");
-                        break;
+                // if(bk.getAllBookingData().size() > 0) {
+                    System.out.println("Cancel");
+                    booking.cancelReservation();
+                // } else {
+                //     System.out.println("There are currently NO Reservations");
+                // }
+                break;
+                
+                case 'd':
+                System.out.println("========================================================");
+                System.out.println("Thank you!!");
+                System.out.println("========================================================");
+                break;
+                
+                default:
+                System.out.println("*******************! Invalid option !*******************" +
+                                   "\n Please Enter an alphabet from [A] to [D]");
+                break;
                 }
+        } while (Character.toLowerCase(option) != 'd');
 
-            } while (Character.toLowerCase(option) != 'e');
-
-            System.out.println("Thank you for banking with us! See you again....");
             System.exit(0);
-    }
+            input.close();
+        }
  }
 }
 
